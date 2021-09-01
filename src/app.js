@@ -3,9 +3,9 @@ const path = require('path')
 const request = require("request");
 const hbs = require("hbs");
 const app = express()
-const port = 3000 || process.env.PORT
+const port = process.env.PORT || 3000 
 
-//////////////////////////////http request
+////////////////////////////http request
 const newsapi=(language,category)=>{
     const url ="https://newsapi.org/v2/top-headlines?category="+category+"&pageSize=50&language="+language+"&apiKey=18b9cc774c3a473585e49ef6276f31f3"
     request( {url,json:true}, (error,response)=>{
