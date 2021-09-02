@@ -3,14 +3,13 @@ const path = require('path')
 const request = require("request");
 const hbs = require("hbs");
 const app = express()
-const port = process.env.PORT || 3000 
-
+const port = process.env.PORT || 3000
 ////////////////////////////http request
 const newsapi=(language,category)=>{
-    const url ="https://newsapi.org/v2/top-headlines?category="+category+"&pageSize=50&language="+language+"&apiKey=18b9cc774c3a473585e49ef6276f31f3"
+    const url ="https://newsapi.org/v2/top-headlines?category="+category+"&pageSize=100&language="+language+"&apiKey=18b9cc774c3a473585e49ef6276f31f3"
     request( {url,json:true}, (error,response)=>{
     
-        // Internet Connection
+        // Internet Connection 
         if(error){
             console.log('Error has occurred')
         }
